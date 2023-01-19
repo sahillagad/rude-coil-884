@@ -1,11 +1,13 @@
 package callbuddy.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
@@ -26,11 +28,12 @@ public class Problem {
 	private ProblemType problemType;
 	
 
-	@OneToOne 
+	@OneToOne
+	@JoinColumn(name="callId")
 	private Call call;
 	
 	
-	@OneToOne
+	@OneToOne(mappedBy="problem",cascade = CascadeType.ALL)
 	private Solution solution;
 	
 	@Enumerated(EnumType.STRING)
