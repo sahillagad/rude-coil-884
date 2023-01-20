@@ -36,7 +36,7 @@ public class Problem {
 	
 
 	@OneToOne(cascade = CascadeType.ALL)
-	private Call call;
+	private Calling call;
 	
 	
 	@OneToOne(cascade = CascadeType.ALL)

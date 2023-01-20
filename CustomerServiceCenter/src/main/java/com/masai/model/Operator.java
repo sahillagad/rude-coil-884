@@ -67,7 +67,7 @@ public class Operator {
 
     
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy ="operator")
-    private List<Call> calls=new ArrayList<>();
+    private List<Calling> calls=new ArrayList<>();
     
     
     @OneToOne(cascade = CascadeType.ALL)
