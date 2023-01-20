@@ -69,10 +69,7 @@ public class Customer {
     private CustomerStatus customerStatus;
     
     @OneToMany(mappedBy = "customer",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    List<Call> calls=new ArrayList<>();
+    List<Calling> calls=new ArrayList<>();
 	
-    
-    
-  
 	
 }

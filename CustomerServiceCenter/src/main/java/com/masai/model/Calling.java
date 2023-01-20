@@ -15,7 +15,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Future;
 
 @Entity
-public class Call {
+public class Calling {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
