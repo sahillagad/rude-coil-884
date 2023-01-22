@@ -178,7 +178,8 @@ public class AdminServiceImpl implements AdminService{
 		
 		if(op.isPresent()) {
 			
-			operatorDao.delete(op.get());
+			Operator operator = op.get(); 
+			operatorDao.delete(operator);
 			return "operator deleted successfuly";
 			
 		}else {
