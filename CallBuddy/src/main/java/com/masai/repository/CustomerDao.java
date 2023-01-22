@@ -22,4 +22,7 @@ public interface CustomerDao extends JpaRepository<Customer, Integer>{
 	
 	public  Optional<Customer> findByEmail(String email);
 	
+	public Customer findByUserName(String userName);
+	
+	
 }

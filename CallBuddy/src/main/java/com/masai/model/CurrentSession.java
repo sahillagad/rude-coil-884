@@ -26,12 +26,15 @@ public class CurrentSession {
 	@Column(unique = true)
 	private Integer Id;
 	
-
-	private String type;
-	
 	private String uuid;
 	
 	private LocalDateTime timeStamp;
+
+	private String type;
+	
+	
+	
+	
 	
 	
 }
