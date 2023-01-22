@@ -71,9 +71,10 @@ public class Operator {
 	@NotBlank(message = "city  cannot set as blank")
 	private String city;
 	
-	
-    @Enumerated(EnumType.STRING)
-	private OperatorStatus operatorStatus;
+    @NotNull(message = "city  cannot set as null")
+	@NotEmpty(message = "city  cannot set as empty")
+	@NotBlank(message = "city  cannot set as blank")
+	private String operatorStatus;
 
     
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy ="operator")
