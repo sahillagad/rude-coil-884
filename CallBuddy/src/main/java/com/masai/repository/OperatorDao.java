@@ -8,4 +8,5 @@ import com.masai.model.Operator;
 @Repository
 public interface OperatorDao extends JpaRepository<Operator,Integer> {
 
+	public Operator findByUserName(String userName);
 }
