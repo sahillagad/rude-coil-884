@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./adminStyle.css">
+    <link rel="stylesheet" href="style/adminStyle.css">
     <title>Find Department By Id</title>
 </head>
 <body>
@@ -21,24 +21,38 @@
         <input type="text" class="form-control" id="formGroupExampleInput">
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 1em;">
-            <button class="btn btn-primary me-md-2" type="button">Search</button>
+            <button class="btn btn-primary me-md-2" type="button"
+            onclick="findDepartmentById()" id="departmentId">Search</button>
+            <a href="adminDashboard.html">
+                <button class="btn btn-primary me-md-2" type="button" > Back</button> 
+            </a>
         </div>
     </div>
 
 
     <div class="container__problem--info" style="margin-left: 4em;">
+
         <h3 style="margin-bottom: .5em;">Department Details</h3>
+
         <h4>
-            <span class="badge bg-primary">Department Id</span>
-            <span id="">123</span>
+            <span class="badge bg-primary" >Department Id</span>
+            <span id="deptId" style="margin-left: 2em;">123</span>
         </h4>
         <h4>
             <span class="badge bg-primary">Department Name<Title></Title></span>
-            <span id="">123</span>
+            <span id="deptName" style="margin-left: 0.7em;">123</span>
         </h4>
         <h4>
-            <span class="badge bg-primary">Department Address</span>
-            <span id="">123</span>
+            <span class="badge bg-primary">Department State</span>
+            <span id="deptState" style="margin-left: 1em;">123</span>
+        </h4>
+        <h4>
+            <span class="badge bg-primary">Department City</span>
+            <span id="deptCity" style="margin-left: 1.4em;">123</span>
+        </h4>
+        <h4>
+            <span class="badge bg-primary">Department pincode</span>
+            <span id="deptPincode">123</span>
         </h4>
         
     </div>
@@ -48,6 +62,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="./script/findDepartmentById.js"></script>
 </body>
 </html>

@@ -2,9 +2,9 @@
 
 #logo {
     width: 8em;
-  }
-  
-  body {
+}
+
+body {
     background-color: #ffffff;
     font-size: 1.2em;
     font-family: "Open Sans", sans-serif;
@@ -76,7 +76,7 @@
     font-style: normal;
     font-size: 16px;
     -webkit-appearance: none;
-        -moz-appearance: none;
+       -moz-appearance: none;
             appearance: none;
     position: relative;
     display: inline-block;
@@ -161,64 +161,68 @@
     padding: 10px 0;
     border-radius: 0 0 4px 4px;
   }
-  
-  /* dashboard */
-  
-  #container {
-    display: grid;
-    grid-template-columns: 40% auto;
-    margin-top: 3em;
-  }
-  
-  .dashboard__container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5em;
-    background-color: #e1e0ff;
-    border: 5px;
-    padding: 3em 0;
-    align-items: center;
-  }
-  
-  .dashboard__container a {
-    width: 15em;
-    text-decoration: none;
-    text-align: center;
-    background-color: #286687;
-    border: none;
-    border-radius: 5px;
-    padding: .5em;
-    margin-bottom: .5em;
-    color: white;
-  }
-  
-  .dashboard__container a:hover {
-    background-color: #1d5370;
-  
-  }
-  
-  .userInfo {
-    /* border: 1px solid red; */
-    margin: 2.5em 0 5em 10em;
-  }
-  
-  
-  
-  /* Update opertor */
-  select {
-    width: 49%;
-    padding: 1em;
-    margin-top: 1em;
-    color: #8a8b8e;
-    border: 1px solid #c2c0ca;
-    font-style: normal;
-    font-size: 16px;
-    -webkit-appearance: none;
-        -moz-appearance: none;
-            appearance: none;
-    background: none;
-  }
-  
-  .issue__list {
-    margin: 3em 5em;
-  }
+
+
+
+/* Dashboard */
+
+#container {
+  display: grid;
+  grid-template-columns: 40% auto;
+  margin-top: 3em;
+}
+
+.dashboard__container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5em;
+  background-color: #e1e0ff;
+  border: 5px;
+  padding: 3em 0;
+  align-items: center;
+}
+
+.dashboard__container a {
+  width: 15em;
+  text-decoration: none;
+  text-align: center;
+  background-color: #286687;
+  border: none;
+  border-radius: 5px;
+  padding: .5em;
+  margin-bottom: .5em;
+  color: white;
+}
+
+.dashboard__container a:hover {
+  background-color: #1d5370;
+
+}
+
+.userInfo {
+  /* border: 1px solid red; */
+  margin: 2.5em 0 5em 10em;
+}
+
+
+/* dropdown */
+
+.container {
+  margin-top: 2em;
+}
+select {
+  padding: 1em;
+  margin-top: 1em;
+  color: #8a8b8e;
+  border: 1px solid #c2c0ca;
+  font-style: normal;
+  font-size: 16px;
+  -webkit-appearance: none;
+      -moz-appearance: none;
+          appearance: none;
+  background: none;
+}
+
+.issue__list {
+  margin: 3em 5em;
+}
