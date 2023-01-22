@@ -15,18 +15,9 @@ public interface AdminService {
 	public String createDepartment(Department department)throws DepartmentException;
 	
 	
-	////IMP
 	public String deleteDepartment(Integer departmentId)throws DepartmentException;
-	
-	
-	
-	
-	
-	
-	
-	//setter getter 
+
 	public String updateDepartment(Department department)throws DepartmentException;
-	
 	
 	
 	public Department findDepartmentById(Integer departmentId)throws DepartmentException;
@@ -47,8 +38,6 @@ public interface AdminService {
 	public List<Operator> findAllOperator() throws OperatorException;
 	
 	public Operator findOperator(Integer operatorId)throws OperatorException;
-	
-	
 	
 	
 	public String assign_Problem_To_Operator(Integer callId, Integer operatorId)throws CallException, OperatorException ;
