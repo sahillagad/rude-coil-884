@@ -1,35 +1,23 @@
 package com.masai.model;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 public class Customer {
 
 	
@@ -41,7 +29,7 @@ public class Customer {
     @NotNull(message = "user name cannot set as null")
     @NotEmpty(message =  "user name cannot set as empty")
 	@NotBlank(message =  "user name cannot set as blank")
-//    @Column(unique = true)
+    @Column(unique = true)
     private String userName;
     
     @NotNull(message = "password cannot set as null")
@@ -72,25 +60,16 @@ public class Customer {
     private String mobile;
     
     
-    
 	
     @Column(unique = true)
 	@Email(message = "email format is incorrect")
 	private String email;
 	
-    private String customerStatus;
     
+    private CustomerStatus customerStatus;
     
     @OneToMany(mappedBy = "customer",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     List<Calling> calls=new ArrayList<>();
 	
-    
-    
-    
-    
-    
-    
-    
-    
 	
 }
