@@ -14,6 +14,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -42,15 +44,15 @@ public class Problem {
 
 	private String problemDescription;
 	
-	
+	@JsonIgnore
 	@Enumerated(EnumType.STRING)
-	private ProblemStatus problemStatus;
+	private ProblemStatus problemStatus = ProblemStatus.UNSOLVED;
 	
-
+    @JsonIgnore
 	@OneToOne(cascade = CascadeType.ALL)
 	private Calling call;
 	
-	
+    @JsonIgnore
 	@OneToOne(cascade = CascadeType.ALL)
 	private Solution solution;
 	

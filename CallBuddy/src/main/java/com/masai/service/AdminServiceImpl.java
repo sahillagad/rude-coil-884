@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.masai.exception.CallException;
 import com.masai.exception.DepartmentException;
 import com.masai.exception.OperatorException;
+import com.masai.model.Admin;
 import com.masai.model.Calling;
 import com.masai.model.Department;
 import com.masai.model.Operator;
@@ -289,6 +290,31 @@ public class AdminServiceImpl implements AdminService{
 		
 		
    return result;
+	}
+
+	@Override
+	public String createAdmin(Admin admin) throws DepartmentException {
+		// TODO Auto-generated method stub
+		
+
+		String result="admin Is Not register";
+		
+		Optional<Admin> ad = adminDao.findById(admin.getAdminId());
+		
+		if(ad.isPresent()) {
+			
+			Admin a = ad.get();       
+			adminDao.save(a);
+			
+			result= "admin created successfuly";
+			
+		}else {
+			
+			throw new DepartmentException("admin id invalid");
+		}
+		
+	    return result;	
+
 	}
 	
 }

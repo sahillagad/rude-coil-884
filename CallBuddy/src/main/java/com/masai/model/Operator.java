@@ -22,6 +22,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -76,11 +78,11 @@ public class Operator {
 	@NotBlank(message = "city  cannot set as blank")
 	private String operatorStatus;
 
-    
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy ="operator")
     private List<Calling> calls=new ArrayList<>();
     
-    
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     private Solution solution;
     
