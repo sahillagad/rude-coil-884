@@ -239,7 +239,7 @@ public class OperatorServiceImpl implements OperatorService {
 		if(opt.isPresent()) {
 			  
 			Customer customer=opt.get();
-			customer.setCustomerStatus(customerStatus); 			
+			customer.setCustomerStatus("CANLOGIN"); 			
 			customerDao.save(customer);
 			result="Customer Status Update Successfully";
 		

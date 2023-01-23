@@ -1,6 +1,7 @@
 package com.masai.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -140,6 +141,19 @@ public class AdminController {
 			return new ResponseEntity<String>(result,HttpStatus.OK);
 		
 	}
+	
+	@PostMapping("/admin") 
+	public  ResponseEntity<String>  createAdmin( @RequestBody Admin admin)
+			throws DepartmentException {
+		
+		
+
+		     String  result=adminService.createAdmin(admin);
+	    	
+			return new ResponseEntity<String>(result,HttpStatus.OK);
+		
+	}
+	
 	
 	
 	

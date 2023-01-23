@@ -203,14 +203,12 @@ public class CustomerServiceImpl implements CustomerService{
 		calling.setDate(LocalDate.now());
 		calling.setProblem(problem);
 		calling.setStartTime(LocalTime.now());
-	
+	   
 	    exitingcustomer.getCalls().add(calling);
 		problem.setCall(calling);
-	    
+	    problem.setProblemStatus(ProblemStatus.UNSOLVED);
 	     
-		 
-		  callDao.save(calling);
-	      problemDao.save(problem);
+	    customerDao.save(exitingcustomer); 
         result="Problem Is Created Successfully...";
 	}
 	
