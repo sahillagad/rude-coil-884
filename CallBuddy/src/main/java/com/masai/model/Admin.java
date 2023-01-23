@@ -16,6 +16,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -50,7 +52,7 @@ public class Admin {
 	@NotBlank(message =  "password cannot set as blank")
     private String password;
 	
-	
+	//@JsonIgnore
     @OneToMany(cascade = CascadeType.ALL)
     private List<Department> department=new ArrayList<>();
     

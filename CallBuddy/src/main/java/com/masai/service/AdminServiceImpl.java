@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.masai.exception.CallException;
 import com.masai.exception.DepartmentException;
 import com.masai.exception.OperatorException;
+import com.masai.model.Admin;
 import com.masai.model.Calling;
 import com.masai.model.Department;
 import com.masai.model.Operator;
@@ -159,8 +160,8 @@ public class AdminServiceImpl implements AdminService{
 			Department d = dept.get();
 			d.getOperators().add(operator);
 	              
-			operatorDao.save(operator);
-			
+			//operatorDao.save(operator);
+			departmentDao.save(d);
 			result= "Operator created successfuly";
 			
 		}else {
@@ -289,6 +290,27 @@ public class AdminServiceImpl implements AdminService{
 		
 		
    return result;
+	}
+
+	@Override
+	public String createAdmin(Admin admin) throws DepartmentException {
+	String result="Admin NOt Existed";
+		
+		Admin Existingadmin=adminDao.save(admin);		
+		if(Existingadmin!=null) {
+			
+			result="Admin Registered";
+			
+			
+		}
+		else {
+			
+			DepartmentException departmentException=new DepartmentException(result);
+			
+			throw departmentException;
+		}
+		
+		 return result;
 	}
 	
 }

@@ -15,6 +15,7 @@ import com.masai.model.Login;
 import com.masai.service.LoginService;
 
 @RestController
+
 public class LoginController {
 	
 	@Autowired

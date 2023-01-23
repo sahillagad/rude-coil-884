@@ -20,6 +20,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -81,7 +83,7 @@ public class Customer {
     @Enumerated(EnumType.STRING)
     private CustomerStatus customerStatus;
     
-    
+    @JsonIgnore
     @OneToMany(mappedBy = "customer",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     List<Calling> calls=new ArrayList<>();
 	

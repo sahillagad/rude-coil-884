@@ -6,6 +6,7 @@ import com.masai.exception.CallException;
 import com.masai.exception.DepartmentException;
 import com.masai.exception.OperatorException;
 import com.masai.exception.ProblemException;
+import com.masai.model.Admin;
 import com.masai.model.Department;
 import com.masai.model.Operator;
 
@@ -14,7 +15,7 @@ public interface AdminService {
 	
 	public String createDepartment(Department department)throws DepartmentException;
 	
-	
+	public String createAdmin(Admin admin)throws DepartmentException;
 	public String deleteDepartment(Integer departmentId)throws DepartmentException;
 
 	public String updateDepartment(Department department)throws DepartmentException;

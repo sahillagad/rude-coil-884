@@ -41,6 +41,14 @@ public class AdminController {
     	
 		return new ResponseEntity<String>(result,HttpStatus.CREATED);
 	}
+    
+    @PostMapping("/admin")
+  	public ResponseEntity<String> createAdmin(@RequestBody Admin admin) throws DepartmentException {
+
+           String  result=adminService.createAdmin(admin);
+      	
+  		return new ResponseEntity<String>(result,HttpStatus.CREATED);
+  	}
 
 
     @DeleteMapping("/department/{id}")
