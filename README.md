@@ -1,4 +1,7 @@
-# Online Customer Service Center
+<img src="https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&amp;color=teal&amp;size=20&amp;lines=ONLINE+CUSTOMER+SERVICE+CENTER;" style="width: 100%;">
+
+
+<h1 align="center">CALL BUDDY WEBSITE</h1>
 
 About CallBuddy - Hello world ! , The purpose of creating this project is to provide call facility to customers who is facing issue. In callBuddy customer can raise their problem and our admin will create department and operator , operator will solve problem by providing soluation to customer. 
 
@@ -66,4 +69,4 @@ A Group project build by 4 Developers, executed in 5 Days.
 - **[Chandra Prakash Dhaker](https://github.com/ChanduDhakad)**
 - **[Aman Verma](https://github.com/amanvermai30)**
 
-# 🤝 Thanks for taking the time to view our project! We hope that you found it interesting and informative.
+### 🤝 Thanks for taking the time to view our project! We hope that you found it interesting and informative.
