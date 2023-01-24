@@ -1,5 +1,6 @@
 package com.masai.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -295,26 +296,23 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public String createAdmin(Admin admin) throws DepartmentException {
 		// TODO Auto-generated method stub
-		
+	    String res = " admin not register ";
+	
+	  Admin ad = adminDao.save(admin);
+	  
+	  if( ad != null ) {
+		  res =  " admin register successfuly";
+//		  List<Department> list = ad.getDepartment();
+//		  
+//		  for( Department d : list) {
+//			  departmentDao.save(d);
+//		  }
+		  
+	  }else {
+		  throw new DepartmentException("admin id invalid ");
+	  }
 
-		String result="admin Is Not register";
-		
-		Optional<Admin> ad = adminDao.findById(admin.getAdminId());
-		
-		if(ad.isPresent()) {
-			
-			Admin a = ad.get();       
-			adminDao.save(a);
-			
-			result= "admin created successfuly";
-			
-		}else {
-			
-			throw new DepartmentException("admin id invalid");
-		}
-		
-	    return result;	
-
+	  return res;
 	}
 	
 }

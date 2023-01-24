@@ -57,7 +57,7 @@ function appendData(data) {
     mobile.innerText = el.mobile;
 
     let status = document.createElement("td");
-    status.innerText = el.status;
+    status.innerText = el.operatorStatus;
 
     // appending td to tr
     tr.append(opid,opratorName,email,mobile,status);
