@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/adminStyle.css">
     <title>Admin SignUp</title>
+    <style>
+        #submit {
+          display: flex;
+          color: white;
+          width: 78%;
+          margin: auto;
+          background-color: blue;
+          margin-top: 30px;
+          height: 20px;
+          justify-content: center;
+          align-items: center;
+          padding: 23px;
+          border: none;
+          cursor: pointer;
+        }
+  
+        #submit:hover {
+          transform: scale(0.9);
+        }
+      </style>
 </head>
 <body>
     <header>
@@ -23,7 +43,7 @@
                 </p>
 
                 <p>
-                <input type="text" id="username" name="username" placeholder="User Name" required><i class="validation"><span></span><span></span></i>
+                <input type="text" id="userName" name="userName" placeholder="User Name" required><i class="validation"><span></span><span></span></i>
                 </p>
 
                 <p>
@@ -35,15 +55,33 @@
                 </p>
 
                 <p>
+                    <input type="text" class="form-control" id="departmentName" placeholder="Department Name" />
+                </p>
+                
+                <p>
+                    <input type="text" class="form-control" id="departmentState" placeholder="Department State"/>
+                </p>
+                
+                <p>
+                    <input type="text" class="form-control" id="departmentCity" placeholder="Department City"/>
+                </p>
+
+                <p>
+                    <input type="text" class="form-control" id="pincode" placeholder="Department pincode"/>
+                </p> -->
+                
+                <!-- <p>
                 <input type="text" id="mobile" name="mobile" placeholder="Mobile No." required><i class="validation"><span></span><span></span></i>
                 </p>
 
                 <p>
-                <input type="submit" id="login" value="SignUp">
+                <!-- <input type="submit" id="login" value="SignUp"> -->
+                <button id="submit">SUBMIT</button>
                 </p>
             </form>
         </div><!--login-form-wrap-->
         <!-- partial -->
     </main>
+    <script src="./script/signup.js"></script>
 </body>
 </html>

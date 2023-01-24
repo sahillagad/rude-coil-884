@@ -39,15 +39,15 @@ public class Admin {
 	private String eamil;
 
     
-    @NotNull(message = "user name cannot set as null")
-    @NotEmpty(message =  "user name cannot set as empty")
-	@NotBlank(message =  "user name cannot set as blank")
+//    @NotNull(message = "user name cannot set as null")
+//    @NotEmpty(message =  "user name cannot set as empty")
+//	@NotBlank(message =  "user name cannot set as blank")
     @Column(unique = true)
     private String userName;
     
-    @NotNull(message = "password cannot set as null")
-    @NotEmpty(message =  "password cannot set as empty")
-	@NotBlank(message =  "password cannot set as blank")
+//    @NotNull(message = "password cannot set as null")
+//    @NotEmpty(message =  "password cannot set as empty")
+//	@NotBlank(message =  "password cannot set as blank")
     private String password;
 	
 	
