@@ -28,11 +28,11 @@ document.querySelector("form").addEventListener("submit",adminSignup)
 
     let department = {};
 
-    // department["departmentId"]
-    // department["departmentName"] = deptName;
-    // department["departmentState"] = deptState
-    // department["departmentCity"] = deptCity
-    // department["pincode"] = deptpincode
+    department["departmentId"]
+    department["departmentName"] = deptName;
+    department["departmentState"] = deptState
+    department["departmentCity"] = deptCity
+    department["pincode"] = deptpincode
 
 
     let obj={};
