@@ -12,23 +12,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Login {
-	
 
-    @NotNull(message = "userName cannot set as null")
-    @NotEmpty(message =  "userName cannot set as empty")
-	@NotBlank(message =  "userName cannot set as blank")
-     private String userName;
-    
-    
+	@NotNull(message = "userName cannot set as null")
+	@NotEmpty(message = "userName cannot set as empty")
+	@NotBlank(message = "userName cannot set as blank")
+	private String userName;
 
-    @NotNull(message = "password cannot set as null")
-    @NotEmpty(message =  "password cannot set as empty")
-	@NotBlank(message =  "password cannot set as blank")
-     private String password;
-    
-    @NotNull(message = "password cannot set as null")
-    @NotEmpty(message =  "password cannot set as empty")
-	@NotBlank(message =  "password cannot set as blank")
-    private String userType;
-	 
+	@NotNull(message = "password cannot set as null")
+	@NotEmpty(message = "password cannot set as empty")
+	@NotBlank(message = "password cannot set as blank")
+	private String password;
+
+	@NotNull(message = "password cannot set as null")
+	@NotEmpty(message = "password cannot set as empty")
+	@NotBlank(message = "password cannot set as blank")
+	private String userType;
+
 }
