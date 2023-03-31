@@ -11,6 +11,7 @@ import com.masai.model.Admin;
 import com.masai.model.CurrentSession;
 import com.masai.model.Customer;
 import com.masai.model.Login;
+import com.masai.model.LoginResponse;
 import com.masai.model.Operator;
 import com.masai.repository.AdminDao;
 import com.masai.repository.CustomerDao;
@@ -35,7 +36,7 @@ public class LoginServiceImpl implements LoginService {
 	AdminDao adminRepo;
 
 	@Override
-	public String loginUser(Login credential) throws LoginException {
+	public LoginResponse loginUser(Login credential) throws LoginException {
 		CurrentSession currentUserSession;
 		if (credential.getUserType().equals("CUSTOMER")) {
 
@@ -62,7 +63,7 @@ public class LoginServiceImpl implements LoginService {
 
 				sessionRepo.save(currentUserSession);
 
-				return key;
+				return new LoginResponse("login successfully wellcome to callBudyy", key);
 			} else
 				throw new LoginException("Passowrd incorrect");
 		}
@@ -90,7 +91,7 @@ public class LoginServiceImpl implements LoginService {
 
 				sessionRepo.save(currentUserSession);
 
-				return key;
+				return new LoginResponse("login successfully wellcome to callBudyy", key);
 			} else
 				throw new LoginException("Passowrd incorrect");
 		}
@@ -120,7 +121,7 @@ public class LoginServiceImpl implements LoginService {
 
 				sessionRepo.save(currentUserSession);
 
-				return key;
+				return new LoginResponse("login successfully wellcome to callBudyy", key);
 			} else
 				throw new LoginException("Passowrd incorrect");
 		} else

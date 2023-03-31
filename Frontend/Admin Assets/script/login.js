@@ -17,14 +17,23 @@ async function userSignin(e) {
     userType: type,
   };
 
-  userLoginFun(loginData);
+  try {
+    const StoringData = await userLoginFun(loginData);
+    localStorage.setItem('sessionKey', StoringData.sessionkey);
+    console.log(StoringData);
+    alert("admin login successfully");
+    window.location.href = "./adminDashboard.html";
+  } catch (error) {
+    console.error(error);
+    alert("Error: " + error.message);
+  }
 
 }
 
 let userLoginFun = async (obj) => {
 
   try {
-    let res = await fetch("http://localhost:8888/loginController/login", {
+    const res = await fetch("http://localhost:8888/loginController/login", {
       method: "POST",
       body: JSON.stringify(obj),
       headers: {
@@ -33,26 +42,23 @@ let userLoginFun = async (obj) => {
     });
 
     if (res.ok) {
-      console.log("sucesss");
-      let data = await res.json();
+      console.log("success");
+      const data = await res.json();
+      return data
 
-      // To get data from response   // user data
-      // let userData=JSON.stringify(data)
-      let d = JSON.stringify(data);
-      
     } else {
-      let data = await res.json();
-      let error = JSON.stringify(data);
 
-      let msg = JSON.parse(error);
-
+      const data = await res.json();
+      const error = JSON.stringify(data);
+      const msg = JSON.parse(error);
       console.log(msg);
-      alert(msg.message);
-    }
+      throw new Error(msg.message);
 
+    }
   } catch (error) {
     console.log(error);
-    alert("admin logout successfuly");
-    window.location.href = "./adminDashboard.html";
+    throw new Error(error);
   }
+
 };
+
