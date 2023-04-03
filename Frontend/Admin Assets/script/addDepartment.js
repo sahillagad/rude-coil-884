@@ -20,10 +20,8 @@ let addDepartment = async () => {
     },
   })
 
-  // let data = await res.json();
-  // return data;
-  // console.log(res.json());
   alert("Department added successfuly")
+  window.location.href = "./adminDashboard.html";
   return res;
 
 
