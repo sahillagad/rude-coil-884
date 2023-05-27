@@ -3,7 +3,7 @@
 
 <h1 align="center">CALL BUDDY WEBSITE</h1>
 
-About CallBuddy - Hello world ! , The purpose of creating this project is to provide call facility to customers who is facing issue. In callBuddy customer can raise their problem and our admin will create department and operator , operator will solve problem by providing soluation to customer. 
+About CallBuddy - Hello world ! , The CallBuddy application provides a call facility to customers who are facing issues. In CallBuddy, customers can raise their problems, and our admin will create a department and an operator, who will solve the problem by providing a solution to the customer.
 
 
 # Problem Statement:
