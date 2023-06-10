@@ -16,6 +16,7 @@ public interface OperatorService {
 	public String CraeteCustomer(Customer customer) throws CustomerException ;
 	
 	public String createProblem(Integer customerId, Problem problem) throws ProblemException ,CustomerException;	
+	
 	public String UpdateCustomerProblem(Problem problem)throws ProblemException;
 	
 	public String closeCustomerProblem(Integer problemId,ProblemStatus problemStatus)throws ProblemException;
