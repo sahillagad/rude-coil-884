@@ -1,7 +1,5 @@
 package com.masai.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,100 +17,55 @@ import com.masai.model.Customer;
 import com.masai.model.CustomerStatus;
 import com.masai.model.Problem;
 import com.masai.model.ProblemStatus;
-import com.masai.repository.CustomerDao;
 import com.masai.service.OperatorService;
-
 
 @RestController
 @RequestMapping("/OperatorController")
 public class OperatorController {
 
-
 	@Autowired
 	private OperatorService service;
-  
-	
-	@PostMapping("/customer")
-	public ResponseEntity<String> CraeteCustomer(@RequestBody Customer customer) throws CustomerException {
-	
-		
-		String result=service.CraeteCustomer(customer);
-	 
-		return new ResponseEntity<String>(result,HttpStatus.CREATED);
-	
-	}
-
-	
 
 	@PutMapping("/customer/{customerId}")
-	public ResponseEntity<String> createProblem(@PathVariable("customerId") Integer customerId,@RequestBody Problem problem) throws ProblemException, CustomerException {
-		
-		String result=service.createProblem(customerId, problem);
-		 return new ResponseEntity<String>(result,HttpStatus.CREATED);
-		
-		
+	public ResponseEntity<String> createProblem(@PathVariable("customerId") Integer customerId,
+			@RequestBody Problem problem) throws ProblemException, CustomerException {
+
+		String result = service.createProblem(customerId, problem);
+		return new ResponseEntity<String>(result, HttpStatus.CREATED);
+
 	}
 
-     
 	@PostMapping("/problem")
 	public ResponseEntity<String> UpdateCustomerProblem(@RequestBody Problem problem) throws ProblemException {
-	
-		String result=service.UpdateCustomerProblem(problem);
-		 return new ResponseEntity<String>(result,HttpStatus.CREATED);
+
+		String result = service.UpdateCustomerProblem(problem);
+		return new ResponseEntity<String>(result, HttpStatus.CREATED);
 	}
 
-	
-	
 	@PutMapping("/problem/{id}/{status}")
-	public ResponseEntity<String> closeCustomerProblem(@PathVariable("id") Integer problemId,@PathVariable("status") ProblemStatus problemStatus) throws ProblemException {
-	
-		String result=service.closeCustomerProblem(problemId, problemStatus);
-		 return new ResponseEntity<String>(result,HttpStatus.CREATED);
-		
-	}
+	public ResponseEntity<String> closeCustomerProblem(@PathVariable("id") Integer problemId,
+			@PathVariable("status") ProblemStatus problemStatus) throws ProblemException {
 
+		String result = service.closeCustomerProblem(problemId, problemStatus);
+		return new ResponseEntity<String>(result, HttpStatus.CREATED);
+
+	}
 
 	@GetMapping("customer/{id}")
 	public ResponseEntity<Customer> findCustomerById(@PathVariable("id") Integer customerId) throws CustomerException {
-	      
-		Customer customer=service.findCustomerById(customerId);
-		
-	 return new ResponseEntity<Customer>(customer,HttpStatus.OK);
+
+		Customer customer = service.findCustomerById(customerId);
+
+		return new ResponseEntity<Customer>(customer, HttpStatus.OK);
 	}
-
- 
-	@GetMapping("/customer/{name}")
-	public ResponseEntity<List<Customer>> findCustomerByName(@PathVariable("name") String name) throws CustomerException {
-		
-		
-	      
-		List<Customer> customer=service.findCustomerByName(name);
-		
-	 return new ResponseEntity<List<Customer>>(customer,HttpStatus.OK);
-		
-	}
-
-
-	
-	@GetMapping("/customer/{email}")
-	public ResponseEntity<Customer> findCustomerByEmail(@PathVariable("eamil") String email) throws CustomerException {
-		
-		 Customer customer=service.findCustomerByEmail(email);
-		 return new ResponseEntity<Customer>(customer,HttpStatus.OK);
-		
-	}
-
 
 	@PutMapping("/customer/{id}/{status}")
-	public ResponseEntity<String> customerLock(@PathVariable("id") Integer customerId,@PathVariable("status") CustomerStatus customerStatus) throws CustomerException {
-		
+	public ResponseEntity<String> customerLock(@PathVariable("id") Integer customerId,
+			@PathVariable("status") CustomerStatus customerStatus) throws CustomerException {
 
-		String result=service.customerLock(customerId, customerStatus);
-		 return new ResponseEntity<String>(result,HttpStatus.OK);
-		
+		String result = service.customerLock(customerId, customerStatus);
+		return new ResponseEntity<String>(result, HttpStatus.OK);
+
 	}
-
-	
-	
 
 }
