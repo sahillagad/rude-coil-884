@@ -3,6 +3,8 @@ package com.masai.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.security.auth.login.LoginException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import com.masai.exception.DepartmentException;
 import com.masai.exception.OperatorException;
 import com.masai.model.Admin;
 import com.masai.model.Calling;
+import com.masai.model.CurrentSession;
 import com.masai.model.Department;
 import com.masai.model.Operator;
 import com.masai.repository.AdminDao;
@@ -18,6 +21,7 @@ import com.masai.repository.CallDao;
 import com.masai.repository.DepartmentDao;
 import com.masai.repository.OperatorDao;
 import com.masai.repository.ProblemDao;
+import com.masai.repository.SessionDao;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -29,13 +33,12 @@ public class AdminServiceImpl implements AdminService {
 	private OperatorDao operatorDao;
 
 	@Autowired
-	private ProblemDao problemDao;
-
-	@Autowired
 	private CallDao callDao;
 
 	@Autowired
 	private AdminDao adminDao;
+
+	private SessionDao sessionDao;
 
 	@Override
 	public String createDepartment(Department department) throws DepartmentException {
@@ -278,7 +281,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public String createAdmin(Admin admin) throws DepartmentException {
-		// TODO Auto-generated method stub
+	
 		String res = " admin not register ";
 
 		Admin ad = adminDao.save(admin);
@@ -296,6 +299,19 @@ public class AdminServiceImpl implements AdminService {
 		}
 
 		return res;
+	}
+
+	@Override
+	public Admin getSingalVendor(String key) throws LoginException {
+		CurrentSession session = sessionDao.findByUuid(key);
+
+		if (session == null) {
+			throw new LoginException("Vendor Not logged In");
+		}
+		Optional<Admin> adminOpt = adminDao.findById(session.getId());
+		Admin admin = adminOpt.get();
+
+		return admin;
 	}
 
 }

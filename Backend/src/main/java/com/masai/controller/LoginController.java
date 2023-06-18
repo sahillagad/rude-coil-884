@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.model.Login;
+import com.masai.model.LoginResponse;
 import com.masai.service.LoginService;
 
 @RestController
@@ -23,19 +24,19 @@ public class LoginController {
 	LoginService loginService;
 
 	@PostMapping("/login")
-	public ResponseEntity<String> USerLogin(@RequestBody Login login) throws LoginException {
+	public ResponseEntity<LoginResponse> USerLogin(@RequestBody Login login) throws LoginException {
 
-		String result = loginService.loginUser(login);
+		LoginResponse result = loginService.loginUser(login);
 
-		return new ResponseEntity<String>(result, HttpStatus.OK);
+		return new ResponseEntity<LoginResponse>(result, HttpStatus.OK);
 
 	}
 
 	@DeleteMapping("/logout/{key}")
 	public ResponseEntity<String> UserLogout(@PathVariable("key") String key) throws LoginException {
 		String result = loginService.logoutUser(key);
-		
-		return new ResponseEntity<String>(result,HttpStatus.OK);
+
+		return new ResponseEntity<String>(result, HttpStatus.OK);
 
 	}
 
