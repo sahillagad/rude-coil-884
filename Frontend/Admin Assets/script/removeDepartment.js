@@ -15,6 +15,7 @@ let deleteDepartment = async () => {
     // return data;
     // console.log(res.json());
     alert("Department deleted successfuly")
+    window.location.href = "./adminDashboard.html";
     return res;
   
   };

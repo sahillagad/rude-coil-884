@@ -58,7 +58,7 @@ let addOperator = async () => {
     } catch (error) {
         console.log(error)
         alert("operator created successfuly")
-       
+        window.location.href = "./adminDashboard.html";
 
     }
   
